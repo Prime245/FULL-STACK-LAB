@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Lab Tasks</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <style>
+    body {
+      background: #eef2f7;
+      color: #1e293b;
+    }
+
+    /* Task 1: Three-item flex row with wrapping and gap */
+    .course-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .course-card {
+      flex: 1 1 280px;
+      min-width: 0;
+
+      /* Task 2: Relative parent for the absolute badge */
+      position: relative;
+
+      border: none;
+      border-radius: 16px;
+      background: #ffffff;
+      overflow: hidden;
+
+      /* Task 4: Drop-shadow and smooth hover transitions */
+      filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.10));
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-8px);
+      filter: drop-shadow(0 14px 18px rgba(0, 0, 0, 0.18));
+    }
+
+    /* Task 2: Positioned badge */
+    .course-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 1;
+    }
+
+    /* Task 3: Decorative heading underline */
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 4px;
+      margin: 12px auto 0;
+      border-radius: 10px;
+      background: #0d6efd;
+    }
+
+    /* Task 3: Symbol before another element */
+    .course-level::before {
+      content: "★";
+      margin-right: 8px;
+      color: #d58b00;
+    }
+
+    .course-art {
+      height: 160px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #0d6efd, #6f42c1);
+      color: white;
+      font-size: 56px;
+      font-weight: bold;
+
+      /* Task 4: Grayscale-to-color hover effect */
+      filter: grayscale(100%);
+      transition: filter 0.4s ease;
+    }
+
+    .course-card:hover .course-art {
+      filter: grayscale(0%);
+    }
+
+    .art-python {
+      background: linear-gradient(135deg, #198754, #20c997);
+    }
+
+    .art-design {
+      background: linear-gradient(135deg, #dc3545, #fd7e14);
+    }
+
+    /* Task 6: Alternating card backgrounds */
+    .course-row > .course-card:nth-child(even) {
+      background-color: #e5efff;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .course-card,
+      .course-art {
+        transition: none;
+      }
+
+      .course-card:hover {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container py-5">
+    <header class="text-center mb-5">
+      <span class="badge text-bg-primary mb-3">Learn & Grow</span>
+      <h1 class="section-title fw-bold">Explore Our Courses</h1>
+      <p class="text-secondary mt-3">
+        Build your skills with practical, beginner-friendly courses.
+      </p>
+    </header>
+
+    <!-- Task 1: Three cards in a wrapping flex row -->
+    <section class="course-row" aria-label="Available courses">
+
+      <article class="card course-card">
+        <!-- Task 2: Absolute badge inside relative card -->
+        <span class="badge text-bg-warning course-badge">
+          Popular
+        </span>
+
+        <div class="course-art" aria-hidden="true">&lt;/&gt;</div>
+
+        <div class="card-body p-4">
+          <h2 class="h4 card-title fw-bold">Web Development</h2>
+          <p class="course-level small fw-semibold">
+            Beginner Friendly
+          </p>
+          <p class="card-text text-secondary">
+            Learn HTML, CSS and Bootstrap to build responsive websites.
+          </p>
+
+          <!-- Task 5: Bootstrap flex utilities for the button row -->
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <a
+              href="https://getbootstrap.com/docs/5.3/getting-started/introduction/"
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Start Learning</a>
+            <a href="#course-info" class="btn btn-outline-secondary">
+              Details
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card course-card">
+        <div class="course-art art-python" aria-hidden="true">Py</div>
+
+        <div class="card-body p-4">
+          <h2 class="h4 card-title fw-bold">Python Programming</h2>
+          <p class="course-level small fw-semibold">
+            Practical Projects
+          </p>
+          <p class="card-text text-secondary">
+            Explore variables, loops and functions through useful examples.
+          </p>
+
+          <!-- Task 5: No custom flexbox CSS for these buttons -->
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <a
+              href="https://docs.python.org/3/tutorial/"
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Start Learning</a>
+            <a href="#course-info" class="btn btn-outline-secondary">
+              Details
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card course-card">
+        <div class="course-art art-design" aria-hidden="true">UI</div>
+
+        <div class="card-body p-4">
+          <h2 class="h4 card-title fw-bold">UI Design</h2>
+          <p class="course-level small fw-semibold">
+            Creative Skills
+          </p>
+          <p class="card-text text-secondary">
+            Discover layouts, typography and colors for attractive interfaces.
+          </p>
+
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS"
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Start Learning</a>
+            <a href="#course-info" class="btn btn-outline-secondary">
+              Details
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <aside id="course-info" class="alert alert-primary mt-5">
+      <strong>Course information:</strong>
+      Each course links to free learning material. Hover over the cards
+      to see the color and shadow effects. Resize the window to see
+      the cards wrap.
+    </aside>
+
+    <footer class="text-center text-secondary small mt-4">
+      Full Stack Web Development Lab — Bootstrap & CSS
+    </footer>
+  </main>
+</body>
+</html>
