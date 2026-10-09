@@ -1,0 +1,60 @@
+/* Bootstrap handles layout. These overrides supply the custom purple palette. */
+:root, [data-bs-theme="light"] {
+  --bs-primary-rgb: 109, 40, 217;
+  --bs-primary-text-emphasis: #5b21b6;
+  --bs-primary-bg-subtle: #ede9fe;
+  --bs-primary-border-subtle: #c4b5fd;
+  --bs-body-bg: #faf8ff;
+  --bs-body-color: #251c39;
+  --bs-secondary-color: #645a75;
+  --bs-tertiary-bg: #f1edf8;
+  --bs-border-color: #ded6ec;
+  --theme-accent: #6d28d9;
+}
+[data-bs-theme="dark"] {
+  --bs-primary-rgb: 167, 139, 250;
+  --bs-primary-text-emphasis: #ddd0ff;
+  --bs-primary-bg-subtle: #2b2042;
+  --bs-primary-border-subtle: #55416f;
+  --bs-body-bg: #15111e;
+  --bs-body-color: #f2edf9;
+  --bs-secondary-color: #b8adc9;
+  --bs-tertiary-bg: #20192d;
+  --bs-border-color: #40334f;
+  --theme-accent: #bca3ff;
+}
+body {
+  min-height: 100vh;
+  background-image: radial-gradient(ellipse at top left, rgba(124, 58, 237, .16), transparent 65%);
+}
+.bg-primary.bg-gradient {
+  background: linear-gradient(120deg, #32135c, #6d28d9) !important;
+}
+.btn-primary {
+  --bs-btn-bg: #6d28d9;
+  --bs-btn-border-color: #6d28d9;
+  --bs-btn-hover-bg: #5b21b6;
+  --bs-btn-hover-border-color: #5b21b6;
+  --bs-btn-active-bg: #4c1d95;
+  --bs-btn-active-border-color: #4c1d95;
+  --bs-btn-disabled-bg: #6d28d9;
+  --bs-btn-disabled-border-color: #6d28d9;
+  --bs-btn-focus-shadow-rgb: 167, 139, 250;
+}
+.btn-outline-primary {
+  --bs-btn-color: var(--theme-accent);
+  --bs-btn-border-color: var(--theme-accent);
+  --bs-btn-hover-bg: #6d28d9;
+  --bs-btn-hover-border-color: #6d28d9;
+  --bs-btn-active-bg: #5b21b6;
+  --bs-btn-active-border-color: #5b21b6;
+  --bs-btn-disabled-color: var(--theme-accent);
+  --bs-btn-disabled-border-color: var(--theme-accent);
+  --bs-btn-focus-shadow-rgb: 167, 139, 250;
+}
+.btn-outline-secondary { --bs-btn-color: var(--bs-secondary-color); }
+.form-control:focus, .form-select:focus, .form-check-input:focus {
+  border-color: #a78bfa;
+  box-shadow: 0 0 0 .25rem rgba(167, 139, 250, .25);
+}
+.form-check-input:checked { background-color: #6d28d9; border-color: #6d28d9; }
