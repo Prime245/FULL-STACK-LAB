@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopNest | Bootstrap Store</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <style>
+    body { background: #f5f7fb; }
+    .navbar-brand { font-weight: 800; }
+    .hero {
+      background: linear-gradient(120deg, #142850, #0d6efd);
+      color: white;
+      padding: 85px 0;
+    }
+    .hero-icon { font-size: 110px; }
+    .product-card {
+      height: 100%;
+      border: 0;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 25px #00000018;
+    }
+    .product-image {
+      height: 170px;
+      background: #e9efff;
+      display: grid;
+      place-items: center;
+      font-size: 75px;
+    }
+    .stars { color: #b87800; }
+    .review-card { height: 100%; border: 0; }
+    .quantity-input { width: 75px; }
+    section { scroll-margin-top: 90px; }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">ShopNest</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#products">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#reviews">Reviews</a>
+          </li>
+        </ul>
+
+        <div class="d-flex flex-wrap align-items-center gap-2">
+          <span id="userLabel" class="text-white small"></span>
+
+          <button
+            id="loginNav"
+            class="btn btn-outline-light btn-sm"
+            data-bs-toggle="modal"
+            data-bs-target="#loginModal"
+          >Login</button>
+
+          <button
+            id="signupNav"
+            class="btn btn-primary btn-sm"
+            data-bs-toggle="modal"
+            data-bs-target="#signupModal"
+          >Signup</button>
+
+          <button
+            id="logoutNav"
+            class="btn btn-outline-light btn-sm d-none"
+            onclick="logout()"
+          >Logout</button>
+
+          <button
+            class="btn btn-warning btn-sm"
+            data-bs-toggle="modal"
+            data-bs-target="#cartModal"
+          >
+            Cart <span id="cartCount" class="badge text-bg-dark">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Notifications -->
+  <div
+    id="notification"
+    class="container mt-3"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-md-7">
+          <span class="badge text-bg-warning mb-3">Everyday Essentials</span>
+          <h1 class="display-4 fw-bold">Your next favorite find.</h1>
+          <p class="lead">
+            Explore quality accessories, useful gadgets and everyday style.
+          </p>
+          <a href="#products" class="btn btn-light btn-lg mt-2">
+            Shop Now
+          </a>
+        </div>
+        <div class="col-md-5 text-center hero-icon" aria-hidden="true">
+          🛍️
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Product listing -->
+    <section id="products" class="container py-5">
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+        <div>
+          <h2 class="fw-bold mb-1">Featured Products</h2>
+          <p class="text-secondary mb-0">Find something you love.</p>
+        </div>
+
+        <input
+          id="searchInput"
+          type="search"
+          class="form-control"
+          style="max-width: 300px;"
+          placeholder="Search products..."
+          aria-label="Search products"
+        >
+      </div>
+
+      <div id="productList" class="row g-4"></div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="bg-white py-5">
+      <div class="container">
+        <h2 class="text-center fw-bold mb-2">Customer Reviews</h2>
+        <p class="text-center text-secondary mb-4">
+          Sample reviews for this demo store.
+        </p>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <article class="card review-card shadow-sm p-4">
+              <div class="stars mb-2" aria-label="5 out of 5 stars">★★★★★</div>
+              <p>“The headphones are comfortable and sound excellent.”</p>
+              <h3 class="h6 mb-0">Ali Khan</h3>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="card review-card shadow-sm p-4">
+              <div class="stars mb-2" aria-label="5 out of 5 stars">★★★★★</div>
+              <p>“A simple shopping experience. Loved the backpack!”</p>
+              <h3 class="h6 mb-0">Sara Ahmed</h3>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="card review-card shadow-sm p-4">
+              <div class="stars mb-2" aria-label="4 out of 5 stars">★★★★☆</div>
+              <p>“The watch looks great and is easy to use.”</p>
+              <h3 class="h6 mb-0">Hamza Malik</h3>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-4">
+    <p class="mb-1 fw-bold">ShopNest</p>
+    <small>Bootstrap E-Commerce Lab Project</small>
+  </footer>
+
+  <!-- Signup -->
+  <div class="modal fade" id="signupModal" tabindex="-1"
+       aria-labelledby="signupTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="signupTitle">Create Account</h2>
+          <button class="btn-close" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+        </div>
+
+        <form id="signupForm">
+          <div class="modal-body">
+            <p class="text-secondary small">
+              Demo only: use a sample password. Accounts reset on reload.
+            </p>
+
+            <div class="mb-3">
+              <label for="signupName" class="form-label">Full Name</label>
+              <input id="signupName" class="form-control"
+                     maxlength="80" autocomplete="name" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="signupEmail" class="form-label">Email</label>
+              <input id="signupEmail" type="email" class="form-control"
+                     autocomplete="email" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="signupPassword" class="form-label">Password</label>
+              <input id="signupPassword" type="password" class="form-control"
+                     minlength="6" autocomplete="new-password" required>
+              <div class="form-text">At least 6 characters.</div>
+            </div>
+
+            <div id="signupError" class="text-danger small"
+                 role="alert"></div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">
+              Create Account
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login -->
+  <div class="modal fade" id="loginModal" tabindex="-1"
+       aria-labelledby="loginTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="loginTitle">Login</h2>
+          <button class="btn-close" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+        </div>
+
+        <form id="loginForm">
+          <div class="modal-body">
+            <p class="text-secondary small">
+              Create a demo account first using Signup.
+            </p>
+
+            <div class="mb-3">
+              <label for="loginEmail" class="form-label">Email</label>
+              <input id="loginEmail" type="email" class="form-control"
+                     autocomplete="email" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label">Password</label>
+              <input id="loginPassword" type="password" class="form-control"
+                     autocomplete="current-password" required>
+            </div>
+
+            <div id="loginError" class="text-danger small"
+                 role="alert"></div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Display and edit cart -->
+  <div class="modal fade" id="cartModal" tabindex="-1"
+       aria-labelledby="cartTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="cartTitle">Shopping Cart</h2>
+          <button class="btn-close" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <div id="cartItems"></div>
+          <div class="text-end fw-bold fs-5 mt-3">
+            Total: <span id="cartTotal">Rs. 0</span>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-outline-secondary" data-bs-dismiss="modal">
+            Continue Shopping
+          </button>
+          <button id="checkoutButton" class="btn btn-success"
+                  onclick="openCheckout()">
+            Checkout
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout -->
+  <div class="modal fade" id="checkoutModal" tabindex="-1"
+       aria-labelledby="checkoutTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="checkoutTitle">Checkout</h2>
+          <button class="btn-close" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+        </div>
+
+        <form id="checkoutForm">
+          <div class="modal-body">
+            <div class="alert alert-info small">
+              Demo checkout — no payment is collected or order sent.
+            </div>
+
+            <div class="mb-3">
+              <label for="checkoutName" class="form-label">Full Name</label>
+              <input id="checkoutName" class="form-control"
+                     autocomplete="name" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="checkoutEmail" class="form-label">Email</label>
+              <input id="checkoutEmail" type="email" class="form-control"
+                     autocomplete="email" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="checkoutPhone" class="form-label">Phone</label>
+              <input id="checkoutPhone" type="tel" class="form-control"
+                     autocomplete="tel" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="checkoutAddress" class="form-label">
+                Delivery Address
+              </label>
+              <textarea id="checkoutAddress" class="form-control"
+                        rows="2" autocomplete="street-address"
+                        required></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="paymentMethod" class="form-label">
+                Payment Method
+              </label>
+              <select id="paymentMethod" class="form-select">
+                <option>Cash on Delivery (Demo)</option>
+              </select>
+            </div>
+
+            <div class="d-flex justify-content-between border-top pt-3 fw-bold">
+              <span>Order Total</span>
+              <span id="checkoutTotal"></span>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success">
+              Place Demo Order
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const products = [
+      {
+        id: 1,
+        name: "Wireless Headphones",
+        price: 4500,
+        icon: "🎧",
+        description: "Comfortable headphones for music and calls."
+      },
+      {
+        id: 2,
+        name: "Smart Watch",
+        price: 6500,
+        icon: "⌚",
+        description: "Track your daily activity in style."
+      },
+      {
+        id: 3,
+        name: "Everyday Backpack",
+        price: 2800,
+        icon: "🎒",
+        description: "A spacious backpack for work and university."
+      },
+      {
+        id: 4,
+        name: "Running Shoes",
+        price: 5200,
+        icon: "👟",
+        description: "Lightweight shoes for everyday comfort."
+      },
+      {
+        id: 5,
+        name: "Travel Mug",
+        price: 1500,
+        icon: "☕",
+        description: "Keep your favorite drink close on busy days."
+      },
+      {
+        id: 6,
+        name: "Wireless Mouse",
+        price: 2200,
+        icon: "🖱️",
+        description: "Smooth navigation for study and work."
+      }
+    ];
+
+    // Demo accounts exist only in memory.
+    const users = [];
+    let currentUser = null;
+    let cart = [];
+    let notificationTimer;
+
+    const money = value => "Rs. " + value.toLocaleString("en-PK");
+    const cartTotal = () =>
+      cart.reduce((sum, item) => {
+        const product = products.find(p => p.id === item.id);
+        return sum + product.price * item.quantity;
+      }, 0);
+
+    // Load only valid cart data, if local storage is available.
+    try {
+      const saved = JSON.parse(localStorage.getItem("shopnestCart") || "[]");
+
+      if (Array.isArray(saved)) {
+        for (const item of saved) {
+          if (
+            item &&
+            products.some(p => p.id === item.id) &&
+            Number.isInteger(item.quantity) &&
+            item.quantity >= 1 &&
+            item.quantity <= 99 &&
+            !cart.some(p => p.id === item.id)
+          ) {
+            cart.push({ id: item.id, quantity: item.quantity });
+          }
+        }
+      }
+    } catch {
+      cart = [];
+    }
+
+    function saveCart() {
+      try {
+        localStorage.setItem("shopnestCart", JSON.stringify(cart));
+      } catch {
+        // The cart still works if browser storage is unavailable.
+      }
+    }
+
+    function notify(message) {
+      const area = document.getElementById("notification");
+      const alert = document.createElement("div");
+      alert.className = "alert alert-success mb-0";
+      alert.textContent = message;
+      area.replaceChildren(alert);
+
+      clearTimeout(notificationTimer);
+      notificationTimer = setTimeout(() => area.replaceChildren(), 4500);
+    }
+
+    function renderProducts(query = "") {
+      const filtered = products.filter(product =>
+        product.name.toLowerCase().includes(query.toLowerCase())
+      );
+
+      document.getElementById("productList").innerHTML =
+        filtered.length
+          ? filtered.map(product => `
+              <div class="col-sm-6 col-lg-4">
+                <article class="card product-card shadow-sm">
+                  <div class="product-image" aria-hidden="true">
+                    ${product.icon}
+                  </div>
+                  <div class="card-body d-flex flex-column p-4">
+                    <h3 class="h5 fw-bold">${product.name}</h3>
+                    <p class="text-secondary">${product.description}</p>
+                    <div class="d-flex justify-content-between
+                                align-items-center gap-2 mt-auto">
+                      <strong>${money(product.price)}</strong>
+                      <button class="btn btn-primary"
+                              onclick="addToCart(${product.id})">
+                        Add to Cart
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            `).join("")
+          : '<p class="text-secondary">No products found.</p>';
+    }
+
+    function addToCart(id) {
+      const product = products.find(p => p.id === id);
+      if (!product) return;
+
+      const item = cart.find(item => item.id === id);
+
+      if (item) {
+        if (item.quantity >= 99) {
+          notify("Maximum quantity is 99 per product.");
+          return;
+        }
+        item.quantity++;
+      } else {
+        cart.push({ id, quantity: 1 });
+      }
+
+      saveCart();
+      renderCart();
+      notify(product.name + " added to cart.");
+    }
+
+    function renderCart() {
+      document.getElementById("cartCount").textContent =
+        cart.reduce((sum, item) => sum + item.quantity, 0);
+
+      document.getElementById("cartTotal").textContent = money(cartTotal());
+      document.getElementById("checkoutButton").disabled = cart.length === 0;
+
+      if (!cart.length) {
+        document.getElementById("cartItems").innerHTML =
+          '<p class="text-center text-secondary py-4">Your cart is empty.</p>';
+        return;
+      }
+
+      document.getElementById("cartItems").innerHTML = `
+        <div class="table-responsive">
+          <table class="table align-middle">
+            <thead>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Subtotal</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${cart.map(item => {
+                const product = products.find(p => p.id === item.id);
+                return `
+                  <tr>
+                    <td>${product.icon} ${product.name}</td>
+                    <td class="text-nowrap">${money(product.price)}</td>
+                    <td>
+                      <input
+                        type="number"
+                        min="1"
+                        max="99"
+                        step="1"
+                        value="${item.quantity}"
+                        class="form-control quantity-input"
+                        aria-label="Quantity for ${product.name}"
+                        onchange="updateQuantity(${item.id}, this.value)"
+                      >
+                    </td>
+                    <td class="text-nowrap">
+                      ${money(product.price * item.quantity)}
+                    </td>
+                    <td>
+                      <button class="btn btn-outline-danger btn-sm"
+                              onclick="removeFromCart(${item.id})">
+                        Remove
+                      </button>
+                    </td>
+                  </tr>
+                `;
+              }).join("")}
+            </tbody>
+          </table>
+        </div>
+      `;
+    }
+
+    function updateQuantity(id, value) {
+      const quantity = Number(value);
+      const item = cart.find(item => item.id === id);
+
+      if (
+        !item ||
+        !Number.isInteger(quantity) ||
+        quantity < 1 ||
+        quantity > 99
+      ) {
+        renderCart();
+        notify("Enter a whole quantity between 1 and 99.");
+        return;
+      }
+
+      item.quantity = quantity;
+      saveCart();
+      renderCart();
+    }
+
+    function removeFromCart(id) {
+      cart = cart.filter(item => item.id !== id);
+      saveCart();
+      renderCart();
+    }
+
+    function updateUserInterface() {
+      document.getElementById("userLabel").textContent =
+        currentUser ? "Hi, " + currentUser.name : "";
+
+      document.getElementById("loginNav")
+        .classList.toggle("d-none", !!currentUser);
+      document.getElementById("signupNav")
+        .classList.toggle("d-none", !!currentUser);
+      document.getElementById("logoutNav")
+        .classList.toggle("d-none", !currentUser);
+    }
+
+    document.getElementById("signupForm").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const name = document.getElementById("signupName").value.trim();
+      const email = document.getElementById("signupEmail")
+        .value.trim().toLowerCase();
+      const password = document.getElementById("signupPassword").value;
+      const error = document.getElementById("signupError");
+
+      error.textContent = "";
+
+      if (!name) {
+        error.textContent = "Please enter your name.";
+        return;
+      }
+
+      if (users.some(user => user.email === email)) {
+        error.textContent = "This email already has a demo account.";
+        return;
+      }
+
+      users.push({ name, email, password });
+      currentUser = { name, email };
+      updateUserInterface();
+
+      bootstrap.Modal.getOrCreateInstance(
+        document.getElementById("signupModal")
+      ).hide();
+
+      event.target.reset();
+      notify("Demo account created. You are now logged in.");
+    });
+
+    document.getElementById("loginForm").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const email = document.getElementById("loginEmail")
+        .value.trim().toLowerCase();
+      const password = document.getElementById("loginPassword").value;
+      const user = users.find(user =>
+        user.email === email && user.password === password
+      );
+
+      document.getElementById("loginError").textContent = "";
+
+      if (!user) {
+        document.getElementById("loginError").textContent =
+          "Incorrect email or password. Sign up first if needed.";
+        return;
+      }
+
+      currentUser = { name: user.name, email: user.email };
+      updateUserInterface();
+
+      bootstrap.Modal.getOrCreateInstance(
+        document.getElementById("loginModal")
+      ).hide();
+
+      event.target.reset();
+      notify("Logged in successfully.");
+    });
+
+    function logout() {
+      currentUser = null;
+      updateUserInterface();
+      notify("You have logged out.");
+    }
+
+    function openCheckout() {
+      if (!cart.length) return;
+
+      document.getElementById("checkoutName").value =
+        currentUser?.name || "";
+      document.getElementById("checkoutEmail").value =
+        currentUser?.email || "";
+      document.getElementById("checkoutTotal").textContent =
+        money(cartTotal());
+
+      const cartElement = document.getElementById("cartModal");
+
+      // Wait for one modal to close before opening the next.
+      cartElement.addEventListener("hidden.bs.modal", () => {
+        bootstrap.Modal.getOrCreateInstance(
+          document.getElementById("checkoutModal")
+        ).show();
+      }, { once: true });
+
+      bootstrap.Modal.getOrCreateInstance(cartElement).hide();
+    }
+
+    document.getElementById("checkoutForm").addEventListener("submit", event => {
+      event.preventDefault();
+      if (!cart.length) return;
+
+      const name = document.getElementById("checkoutName").value.trim();
+      const phone = document.getElementById("checkoutPhone").value.trim();
+      const address = document.getElementById("checkoutAddress").value.trim();
+
+      if (!name || !phone || !address) {
+        notify("Please complete the delivery information.");
+        return;
+      }
+
+      const total = cartTotal();
+      const orderId = "SN-" + Date.now().toString().slice(-8);
+
+      cart = [];
+      saveCart();
+      renderCart();
+
+      bootstrap.Modal.getOrCreateInstance(
+        document.getElementById("checkoutModal")
+      ).hide();
+
+      event.target.reset();
+      notify(
+        `Thank you, ${name}! Demo order ${orderId} confirmed. ` +
+        `Total: ${money(total)}. No actual order or payment was submitted.`
+      );
+    });
+
+    document.getElementById("searchInput").addEventListener("input", event => {
+      renderProducts(event.target.value);
+    });
+
+    renderProducts();
+    renderCart();
+    updateUserInterface();
+  </script>
+</body>
+</html>
