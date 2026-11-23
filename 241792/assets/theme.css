@@ -27,6 +27,7 @@ body {
   min-height: 100vh;
   background-image: radial-gradient(ellipse at top left, rgba(124, 58, 237, .16), transparent 65%);
 }
+.feed-photo { display: block; width: 100%; max-height: 22rem; object-fit: contain; }
 .bg-primary.bg-gradient {
   background: linear-gradient(120deg, #32135c, #6d28d9) !important;
 }

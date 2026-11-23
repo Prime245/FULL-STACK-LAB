@@ -10,6 +10,7 @@ const members = [
 ];
 const me = {id:'asad', name:'Asad Hayat', minutes:0};
 const initial = {friends:['affan','sara','hamza'], requests:[], ratings:{}, chats:{}, posts:[
+  {id:4, author:'ali', text:'King did it', image:'assets/kohli-update.png', alt:'Virat Kohli cricket poster', likes:0, dislikes:0, vote:'', to:'all'},
   {id:1, author:'affan', text:'Finished my first web project today! Small steps, late nights, and a lot of learning. What are you building this week?', likes:12, dislikes:0, vote:'', to:'all'},
   {id:2, author:'sara', text:'A little reminder to step outside. Islamabad sunsets make even the busiest days feel a little softer. ☀', likes:24, dislikes:1, vote:'', to:'all'},
   {id:3, author:'hamza', text:'Weekend plan: a walk on Trail 3 and breakfast with friends. Who is joining? 🌿', likes:8, dislikes:0, vote:'', to:'all'}
@@ -17,6 +18,27 @@ const initial = {friends:['affan','sara','hamza'], requests:[], ratings:{}, chat
 let state = initial;
 try { state = JSON.parse(localStorage.getItem('connecfriend')) || initial; }
 catch { localStorage.removeItem('connecfriend'); }
+const kohliPostIndex = state.posts.findIndex(post => post.id === 4);
+const kohliPost = state.posts[kohliPostIndex];
+if (kohliPost) {
+  const updatedPost = {author:'ali', text:'King did it', image:'assets/kohli-update.png', alt:'Virat Kohli cricket poster'};
+  const needsSave = kohliPostIndex !== 0 || Object.keys(updatedPost).some(key => kohliPost[key] !== updatedPost[key]);
+  Object.assign(kohliPost, updatedPost);
+  if (kohliPostIndex !== 0) state.posts.unshift(...state.posts.splice(kohliPostIndex, 1));
+  if (needsSave) save();
+} else {
+  state.posts.unshift({id:4, author:'ali', text:'King did it', image:'assets/kohli-update.png', alt:'Virat Kohli cricket poster', likes:0, dislikes:0, vote:'', to:'all'});
+  save();
+}
+let removedOldImages = false;
+for (const post of state.posts) {
+  if (post.id === 2 || post.id === 3 || post.image === 'assets/islamabad-sunset.svg' || post.image === 'assets/trail-morning.svg') {
+    removedOldImages = removedOldImages || Boolean(post.image || post.alt);
+    delete post.image;
+    delete post.alt;
+  }
+}
+if (removedOldImages) save();
 const person = id => id === 'asad' ? me : members.find(p => p.id === id);
 const friends = () => members.filter(p => state.friends.includes(p.id)).sort((a,b) => a.minutes-b.minutes);
 // Escape typed text before displaying it as HTML.
@@ -57,7 +79,7 @@ function renderFeed() {
   $('feed').innerHTML = state.posts.filter(post => (person(post.author).name + ' ' + post.text).toLowerCase().includes(query)).map(post => {
     const p = person(post.author);
     const audience = post.to === 'all' ? 'All friends' : post.to.map(id => person(id).name).join(', ');
-    return `<article class="card border-0 rounded-4 shadow-sm p-4 mb-3"><div class="d-flex align-items-center gap-3">${avatar(p)}<div><h3 class="h6 mb-1">${p.name}</h3><span class="small text-body-secondary">${p.minutes ? `Last login ${p.minutes} min ago` : 'Logged in just now'}</span></div></div><p class="fs-5 my-4 text-break">${safe(post.text).replace(/\n/g,'<br>')}</p><div class="small text-body-secondary mb-3">Shared with: ${safe(audience)}</div><div class="border-top pt-3 d-flex gap-2"><button aria-pressed="${post.vote==='likes'}" class="btn btn-sm ${post.vote==='likes'?'btn-primary':'btn-outline-secondary'} rounded-pill px-3" onclick="vote(${post.id},'likes')">♡ Like · ${post.likes}</button><button aria-pressed="${post.vote==='dislikes'}" class="btn btn-sm ${post.vote==='dislikes'?'btn-danger':'btn-outline-secondary'} rounded-pill px-3" onclick="vote(${post.id},'dislikes')">− Dislike · ${post.dislikes}</button></div></article>`;
+    return `<article class="card border-0 rounded-4 shadow-sm p-4 mb-3"><div class="d-flex align-items-center gap-3">${avatar(p)}<div><h3 class="h6 mb-1">${p.name}</h3><span class="small text-body-secondary">${p.minutes ? `Last login ${p.minutes} min ago` : 'Logged in just now'}</span></div></div><p class="fs-5 my-4 text-break">${safe(post.text).replace(/\n/g,'<br>')}</p>${post.image ? `<img src="${post.image}" class="feed-photo rounded-4 mb-3" alt="${safe(post.alt)}">` : ''}<div class="small text-body-secondary mb-3">Shared with: ${safe(audience)}</div><div class="border-top pt-3 d-flex gap-2"><button aria-pressed="${post.vote==='likes'}" class="btn btn-sm ${post.vote==='likes'?'btn-primary':'btn-outline-secondary'} rounded-pill px-3" onclick="vote(${post.id},'likes')">♡ Like · ${post.likes}</button><button aria-pressed="${post.vote==='dislikes'}" class="btn btn-sm ${post.vote==='dislikes'?'btn-danger':'btn-outline-secondary'} rounded-pill px-3" onclick="vote(${post.id},'dislikes')">− Dislike · ${post.dislikes}</button></div></article>`;
   }).join('') || '<div class="bg-body border rounded-4 p-5 text-center"><div class="fs-2 text-primary" aria-hidden="true">⌕</div><h3 class="h5 mt-2">No updates found</h3><p class="text-body-secondary mb-0">Try another name or keyword, or clear your search.</p></div>';
 }
 function publish(event) {
