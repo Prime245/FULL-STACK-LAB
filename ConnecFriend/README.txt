@@ -14,6 +14,8 @@ assets/: bundled Bootstrap 5.3.3 and original SVG avatars
 Layout and components use Bootstrap classes. assets/theme.css adds only the custom
 purple palette, background and focus colors unavailable as built-in classes.
 assets/theme.js provides a saved light/dark toggle; dark mode is the default.
+ConnecFriend-Viva-Guide.pdf: project overview, key code explanations, and viva Q&A.
+The main app.js functions include comments explaining state, rendering, and events.
 
 TRY THESE FEATURES
 1. Wrong login shows an error; correct login opens Home.

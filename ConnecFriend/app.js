@@ -1,6 +1,7 @@
 // Everything is simulated in this browser: no backend or API calls.
 const $ = id => document.getElementById(id);
 const page = location.pathname.split('/').pop();
+// The member directory is sample data used by the circle, invitations, and chat.
 const members = [
   {id:'affan', name:'Affan Tarar', minutes:2, bio:'Code, coffee & good company.'},
   {id:'sara', name:'Sara Ahmed', minutes:8, bio:'Collecting little moments.'},
@@ -9,6 +10,7 @@ const members = [
   {id:'ali', name:'Ali Raza', minutes:48, bio:'Learning something every day.', ignores:['asad']}
 ];
 const me = {id:'asad', name:'Asad Hayat', minutes:0};
+// These starter posts are used only when this browser has no saved feed yet.
 const initial = {friends:['affan','sara','hamza'], requests:[], ratings:{}, chats:{}, posts:[
   {id:4, author:'ali', text:'King did it', image:'assets/kohli-update.png', alt:'Virat Kohli cricket poster', likes:0, dislikes:0, vote:'', to:'all'},
   {id:1, author:'affan', text:'Finished my first web project today! Small steps, late nights, and a lot of learning. What are you building this week?', likes:12, dislikes:0, vote:'', to:'all'},
@@ -16,8 +18,11 @@ const initial = {friends:['affan','sara','hamza'], requests:[], ratings:{}, chat
   {id:3, author:'hamza', text:'Weekend plan: a walk on Trail 3 and breakfast with friends. Who is joining? 🌿', likes:8, dislikes:0, vote:'', to:'all'}
 ]};
 let state = initial;
+// Restore this browser's saved demo state; malformed JSON falls back to fresh data.
 try { state = JSON.parse(localStorage.getItem('connecfriend')) || initial; }
 catch { localStorage.removeItem('connecfriend'); }
+
+// Migrate older saved feeds so the Kohli update is present and easy to find.
 const kohliPostIndex = state.posts.findIndex(post => post.id === 4);
 const kohliPost = state.posts[kohliPostIndex];
 if (kohliPost) {
@@ -30,6 +35,8 @@ if (kohliPost) {
   state.posts.unshift({id:4, author:'ali', text:'King did it', image:'assets/kohli-update.png', alt:'Virat Kohli cricket poster', likes:0, dislikes:0, vote:'', to:'all'});
   save();
 }
+
+// Remove retired sample images from feeds saved before the feed was simplified.
 let removedOldImages = false;
 for (const post of state.posts) {
   if (post.id === 2 || post.id === 3 || post.image === 'assets/islamabad-sunset.svg' || post.image === 'assets/trail-morning.svg') {
@@ -41,11 +48,14 @@ for (const post of state.posts) {
 if (removedOldImages) save();
 const person = id => id === 'asad' ? me : members.find(p => p.id === id);
 const friends = () => members.filter(p => state.friends.includes(p.id)).sort((a,b) => a.minutes-b.minutes);
-// Escape typed text before displaying it as HTML.
+// Escape user-provided text before inserting it into HTML templates.
 const safe = text => String(text).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const avatar = p => `<img src="assets/${p.id}.svg" width="44" height="44" class="rounded-circle flex-shrink-0" alt="${p.name}'s profile picture">`;
+// Persist posts, votes, ratings, invitations, and message threads in this browser.
 function save() { localStorage.setItem('connecfriend', JSON.stringify(state)); }
 function notify(text) { $('notice').innerHTML = `<div class="alert alert-primary rounded-4 d-flex align-items-center justify-content-between gap-3"><span>${safe(text)}</span><button class="btn-close flex-shrink-0" aria-label="Dismiss notification" onclick="this.parentElement.remove()"></button></div>`; }
+
+// The demo login is a client-side check, not secure authentication.
 function login(event) {
   event.preventDefault();
   if ($('username').value.trim() !== 'asad' || $('password').value !== '1234') {
@@ -54,6 +64,8 @@ function login(event) {
   sessionStorage.setItem('connecLogin','yes'); location.href = 'home.html';
 }
 function logout() { sessionStorage.removeItem('connecLogin'); location.href = 'index.html'; }
+
+// Protect the two member pages using a short-lived sessionStorage flag.
 if (page === 'home.html' || page === 'profile.html') {
   if (!sessionStorage.getItem('connecLogin')) location.replace('index.html');
   else if (page === 'home.html') renderHome();
@@ -74,6 +86,8 @@ function invite(id) {
   if (state.requests.includes(id)) return;
   state.requests.push(id); save(); renderDiscover(); notify('Friend invitation sent. Waiting for the member to accept.');
 }
+
+// Rebuild feed cards from state and apply the current name/text search.
 function renderFeed() {
   const query = $('feedSearch').value.trim().toLowerCase();
   $('feed').innerHTML = state.posts.filter(post => (person(post.author).name + ' ' + post.text).toLowerCase().includes(query)).map(post => {
@@ -88,9 +102,12 @@ function publish(event) {
   const selected = [...document.querySelectorAll('[name=recipient]:checked')].map(input => input.value);
   if (!text) { notify('Write something before sharing.'); return; }
   if ($('audience').value === 'some' && !selected.length) { notify('Choose at least one friend.'); return; }
+  // Store the audience as either "all" or the selected member IDs.
   state.posts.unshift({id:Date.now(), author:'asad', text, likes:0, dislikes:0, vote:'', to:$('audience').value==='all'?'all':selected});
   save(); $('feedSearch').value = ''; renderFeed(); $('news').value = ''; $('newsCount').textContent = '0 / 500'; notify('Your update has been shared with your chosen audience.');
 }
+
+// Allow one reaction per user: selecting the other reaction first undoes the old one.
 function vote(id, type) {
   const post = state.posts.find(p => p.id === id);
   const previous = post.vote;
@@ -103,6 +120,8 @@ function renderProfile() {
   $('friends').innerHTML = friends().map(p => `<div class="col-md-6"><article class="bg-body rounded-4 p-4 shadow-sm h-100"><div class="d-flex gap-3 align-items-center mb-3">${avatar(p)}<div><h3 class="h6 mb-1">${p.name}</h3><small class="text-body-secondary">Logged in ${p.minutes} min ago</small></div></div><p class="text-body-secondary">${p.bio}</p><label class="small text-primary fw-bold" for="rating-${p.id}">YOUR FRIEND RATING</label><select id="rating-${p.id}" class="form-select mt-2" onchange="rate('${p.id}',this.value)"><option value="">Choose a rating</option>${['🤪 Stupid','😎 Cool','🛡 Trustworthy'].map((label,i) => `<option value="${i+1}" ${Number(state.ratings[p.id])===i+1?'selected':''}>${i+1} · ${label}</option>`).join('')}</select></article></div>`).join('');
 }
 function rate(id, value) { state.ratings[id] = value; save(); notify('Friend rating updated.'); }
+
+// Each recipient ID has a separate local message thread.
 function renderChat() {
   const messages = state.chats[$('person').value] || [];
   $('chat').innerHTML = messages.length ? messages.map(m => `<div class="bg-primary-subtle rounded-3 p-3 mb-2 text-break"><b>You</b><small class="float-end text-body-secondary">${safe(m.time)}</small><p class="mb-0 mt-1">${safe(m.text)}</p></div>`).join('') : '<div class="bg-body-tertiary rounded-3 p-3 text-body-secondary">No messages yet. Start the conversation.</div>';

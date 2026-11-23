@@ -1,0 +1,312 @@
+%PDF-1.4
+% ConnecFriend Viva Guide
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R] /Count 6 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 1052 >>
+stream
+0.43 0.27 0.69 rg BT /F2 9 Tf 1 0 0 1 52 690 Tm (PROJECT WALKTHROUGH  |  VIVA PREPARATION) Tj ET
+0.28 0.12 0.52 rg BT /F2 30 Tf 1 0 0 1 52 640 Tm (ConnecFriend) Tj ET
+0.38 0.33 0.43 rg BT /F1 13 Tf 1 0 0 1 52 608 Tm (Code explanations, key flows, and viva talking points) Tj ET
+0.14 0.10 0.22 rg BT /F2 11 Tf 1 0 0 1 52 548 Tm (Browser-based social-circle demo) Tj ET
+0.14 0.10 0.22 rg BT /F1 10 Tf 1 0 0 1 52 528 Tm (Muhammad Asad Hayat Awan  |  241792) Tj ET
+0.94 0.91 0.98 rg 52 405 491 82 re f
+0.34 0.14 0.62 rg BT /F2 9 Tf 1 0 0 1 65 463 Tm (PROJECT SUMMARY) Tj ET
+0.14 0.10 0.22 rg BT /F1 10 Tf 1 0 0 1 65 444 Tm (A static client-side app to browse a friend feed, share updates, react, rate) Tj ET
+0.14 0.10 0.22 rg BT /F1 10 Tf 1 0 0 1 65 430 Tm (friends, invite members, and keep local message threads.) Tj ET
+0.34 0.14 0.62 rg BT /F2 9 Tf 1 0 0 1 52 352 Tm (HTML  |  CSS  |  Bootstrap 5  |  Vanilla JavaScript  |  Web Storage) Tj ET
+0.38 0.33 0.43 rg BT /F1 9 Tf 1 0 0 1 52 330 Tm (The login and all sample data are demonstrations only.) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 4945 >>
+stream
+0.43 0.27 0.69 rg BT /F2 8 Tf 1 0 0 1 52 812 Tm (CONNECFRIEND  |  VIVA GUIDE) Tj ET
+0.78 0.72 0.87 RG 0.7 w 52 802 m 543 802 l S
+0.28 0.12 0.52 rg BT /F2 20 Tf 1 0 0 1 52 780 Tm (1. Structure and page flow) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 748 Tm (ConnecFriend is a browser-based social-circle demo. HTML defines page structure, Bootstrap 5) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 735 Tm (provides responsive layout, custom CSS supplies the theme, and vanilla JavaScript handles) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 722 Tm (interactions and browser-local state.) Tj ET
+0.94 0.91 0.98 rg 52 698 491 17 re f
+0.28 0.12 0.52 rg BT /F2 8.5 Tf 1 0 0 1 57 702 Tm (FILE) Tj ET
+0.14 0.10 0.22 rg BT /F1 8.5 Tf 1 0 0 1 197 702 Tm (RESPONSIBILITY) Tj ET
+0.28 0.12 0.52 rg BT /F2 8.5 Tf 1 0 0 1 57 685 Tm (index.html) Tj ET
+0.14 0.10 0.22 rg BT /F1 8.5 Tf 1 0 0 1 197 685 Tm (Login screen; submits to login\(event\).) Tj ET
+0.28 0.12 0.52 rg BT /F2 8.5 Tf 1 0 0 1 57 668 Tm (home.html) Tj ET
+0.14 0.10 0.22 rg BT /F1 8.5 Tf 1 0 0 1 197 668 Tm (Highlights, update composer, searchable feed, friends, invitations,) Tj ET
+0.14 0.10 0.22 rg BT /F1 8.5 Tf 1 0 0 1 197 657 Tm (and chat.) Tj ET
+0.28 0.12 0.52 rg BT /F2 8.5 Tf 1 0 0 1 57 641 Tm (profile.html) Tj ET
+0.14 0.10 0.22 rg BT /F1 8.5 Tf 1 0 0 1 197 641 Tm (Profile details and friend-rating controls.) Tj ET
+0.28 0.12 0.52 rg BT /F2 8.5 Tf 1 0 0 1 57 624 Tm (app.js) Tj ET
+0.14 0.10 0.22 rg BT /F1 8.5 Tf 1 0 0 1 197 624 Tm (Sample data, storage, page logic, rendering, and event handlers.) Tj ET
+0.28 0.12 0.52 rg BT /F2 8.5 Tf 1 0 0 1 57 607 Tm (assets/theme.css) Tj ET
+0.14 0.10 0.22 rg BT /F1 8.5 Tf 1 0 0 1 197 607 Tm (Light/dark color variables, purple palette, focus and image styles.) Tj ET
+0.28 0.12 0.52 rg BT /F2 8.5 Tf 1 0 0 1 57 590 Tm (assets/theme.js) Tj ET
+0.14 0.10 0.22 rg BT /F1 8.5 Tf 1 0 0 1 197 590 Tm (Theme initialization, toggle behavior, and saved preference.) Tj ET
+0.28 0.12 0.52 rg BT /F2 8.5 Tf 1 0 0 1 57 573 Tm (assets/) Tj ET
+0.14 0.10 0.22 rg BT /F1 8.5 Tf 1 0 0 1 197 573 Tm (Bootstrap CSS, avatars, and the Kohli update image.) Tj ET
+0.34 0.14 0.62 rg BT /F2 13 Tf 1 0 0 1 52 553 Tm (How an interaction works) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 532 Tm (HTML form/button -> JavaScript handler -> update state -> save to localStorage -> render) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 519 Tm (updated HTML) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 499 Tm (Example: the home.html form calls publish\(event\) in app.js. The handler validates input, adds) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 486 Tm (a post to state, saves it, and calls renderFeed\(\) to redraw the cards.) Tj ET
+0.34 0.14 0.62 rg BT /F2 13 Tf 1 0 0 1 52 466 Tm (Run the demo) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 64 445 Tm (- Open index.html in Chrome/Edge or use VS Code Live Server. Demo username: asad. Demo) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 64 432 Tm (password: 1234. Then try Home and My profile.) Tj ET
+0.34 0.14 0.62 rg BT /F2 13 Tf 1 0 0 1 52 412 Tm (Login and page guard) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 391 Tm (login\(event\) stops the normal form postback, checks the demo credentials, shows an error on) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 378 Tm (failure, and sets a sessionStorage flag on success. It then navigates to home.html. app.js) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 365 Tm (checks that flag before rendering Home or My profile and sends signed-out visitors back to) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 352 Tm (index.html.) Tj ET
+0.13 0.10 0.17 rg 52 227 491 112 re f
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 332 Tm (// A successful demo login is remembered for this tab session.) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 322 Tm (function login\(event\) {) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 312 Tm (  event.preventDefault\(\);) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 302 Tm (  if \($\('username'\).value.trim\(\) !== 'asad' || $\('password'\).value !== '1234'\) {) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 292 Tm (    $\('loginError'\).textContent = 'Incorrect login.';) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 282 Tm (    return;) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 272 Tm (  }) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 262 Tm (  sessionStorage.setItem\('connecLogin', 'yes'\);) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 252 Tm (  location.href = 'home.html';) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 242 Tm (}) Tj ET
+0.94 0.91 0.98 rg 52 195 491 35 re f
+0.45 0.25 0.72 RG 3 w 52 195 m 52 226 l S
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 62 218 Tm (The login is a client-side demonstration, not secure authentication. A production app must) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 62 205 Tm (validate credentials and permissions on a trusted server.) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 4119 >>
+stream
+0.43 0.27 0.69 rg BT /F2 8 Tf 1 0 0 1 52 812 Tm (CONNECFRIEND  |  VIVA GUIDE) Tj ET
+0.78 0.72 0.87 RG 0.7 w 52 802 m 543 802 l S
+0.28 0.12 0.52 rg BT /F2 20 Tf 1 0 0 1 52 780 Tm (2. State, storage, and migration) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 748 Tm (The members array and me object contain sample identities. One state object holds friends) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 735 Tm (\(member IDs\), requests, ratings, chats \(one thread per recipient\), and posts \(text, image,) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 722 Tm (audience, and reactions\).) Tj ET
+0.34 0.14 0.62 rg BT /F2 13 Tf 1 0 0 1 52 702 Tm (Load saved data) Tj ET
+0.13 0.10 0.17 rg 52 606 491 82 re f
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 681 Tm ( // Load saved state, or use sample data on a first visit.) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 671 Tm (let state = initial;) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 661 Tm (try {) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 651 Tm (  state = JSON.parse\(localStorage.getItem\('connecfriend'\)\) || initial;) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 641 Tm (} catch {) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 631 Tm (  localStorage.removeItem\('connecfriend'\);) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 621 Tm (}) Tj ET
+0.34 0.14 0.62 rg BT /F2 13 Tf 1 0 0 1 52 597 Tm (Migrate an older feed) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 576 Tm (On startup, app.js finds the stable sample post with id 4. It updates that post to the Kohli) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 563 Tm (image and caption and moves it first. If an older saved feed has no such post, the app inserts) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 550 Tm (it. It also removes retired image paths from old saved posts and persists the migration.) Tj ET
+0.13 0.10 0.17 rg 52 405 491 132 re f
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 530 Tm (// Ensure the Kohli post exists and appears first.) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 520 Tm (const index = state.posts.findIndex\(post => post.id === 4\);) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 510 Tm (if \(index >= 0\) {) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 500 Tm (  state.posts.unshift\(...state.posts.splice\(index, 1\)\);) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 490 Tm (} else {) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 480 Tm (  state.posts.unshift\({) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 470 Tm (    id: 4, author: 'ali', text: 'King did it',) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 460 Tm (    image: 'assets/kohli-update.png',) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 450 Tm (    alt: 'Virat Kohli cricket poster',) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 440 Tm (    likes: 0, dislikes: 0, vote: '', to: 'all') Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 430 Tm (  }\);) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 420 Tm (}) Tj ET
+0.13 0.10 0.17 rg 52 351 491 52 re f
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 396 Tm (// Keep persistence in one reusable function.) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 386 Tm (function save\(\) {) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 376 Tm (  localStorage.setItem\('connecfriend', JSON.stringify\(state\)\);) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 366 Tm (}) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 342 Tm (localStorage keeps app data after reloads for the same browser origin. sessionStorage holds) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 329 Tm (the demo connecLogin flag for the current tab session. The theme uses a separate connecTheme) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 316 Tm (key. A file:// page and a localhost page have separate browser storage.) Tj ET
+0.94 0.91 0.98 rg 52 273 491 35 re f
+0.45 0.25 0.72 RG 3 w 52 273 m 52 304 l S
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 62 296 Tm (The try/catch protects startup from malformed saved JSON; it resets only the demo app key.) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 62 283 Tm (Clearing browser site storage also resets the demo data.) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 13 0 R >>
+endobj
+13 0 obj
+<< /Length 4218 >>
+stream
+0.43 0.27 0.69 rg BT /F2 8 Tf 1 0 0 1 52 812 Tm (CONNECFRIEND  |  VIVA GUIDE) Tj ET
+0.78 0.72 0.87 RG 0.7 w 52 802 m 543 802 l S
+0.28 0.12 0.52 rg BT /F2 20 Tf 1 0 0 1 52 780 Tm (3. Rendering, input safety, and publishing) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 748 Tm (renderHome\(\), renderFeed\(\), renderDiscover\(\), renderProfile\(\), and renderChat\(\) build page) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 735 Tm (fragments from the current state. Feed search filters by the member name or post text. Image) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 722 Tm (markup is included only when a post has an image path.) Tj ET
+0.13 0.10 0.17 rg 52 657 491 52 re f
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 702 Tm (// Add image markup only for a post that has an image.) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 692 Tm (const imageMarkup = post.image) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 682 Tm (  ? `<img src="${post.image}" class="feed-photo" alt="${safe\(post.alt\)}">`) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 672 Tm (  : '';) Tj ET
+0.34 0.14 0.62 rg BT /F2 13 Tf 1 0 0 1 52 648 Tm (Escape typed text) Tj ET
+0.13 0.10 0.17 rg 52 572 491 62 re f
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 627 Tm (// Encode HTML-significant characters before inserting user text into markup.) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 617 Tm (const safe = text => String\(text\).replace\(/[&<>"']/g, character => \({) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 607 Tm (  '&': '&amp;', '<': '&lt;', '>': '&gt;',) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 597 Tm (  '"': '&quot;', "'": '&#39;') Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 587 Tm (}[character]\)\);) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 563 Tm (Escaping is important because template strings are inserted as HTML. Without escaping, a user) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 550 Tm (could enter markup instead of plain text. The demo uses safe\(\) for post text, messages,) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 537 Tm (notifications, and the image alt text.) Tj ET
+0.34 0.14 0.62 rg BT /F2 13 Tf 1 0 0 1 52 517 Tm (Publish an update) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 64 496 Tm (- Prevent the default form submission; trim the update text; collect checked friend IDs;) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 64 483 Tm (reject empty text and an empty selected-friends list; create the post; save state; clear the) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 64 470 Tm (form and search; rerender and notify.) Tj ET
+0.13 0.10 0.17 rg 52 335 491 122 re f
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 450 Tm ( // Validate before changing state.) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 440 Tm (const text = $\('news'\).value.trim\(\);) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 430 Tm (if \(!text\) { notify\('Write something before sharing.'\); return; }) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 420 Tm (if \($\('audience'\).value === 'some' && !selected.length\) {) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 410 Tm (  notify\('Choose at least one friend.'\); return;) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 400 Tm (}) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 390 Tm (state.posts.unshift\({) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 380 Tm (  id: Date.now\(\), author: 'asad', text,) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 370 Tm (  likes: 0, dislikes: 0, vote: '',) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 360 Tm (  to: $\('audience'\).value === 'all' ? 'all' : selected) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 350 Tm (}\);) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 326 Tm (The audience value is either the string all or an array of selected member IDs. This gives) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 313 Tm (renderFeed\(\) enough information to display who can see the post.) Tj ET
+0.94 0.91 0.98 rg 52 270 491 35 re f
+0.45 0.25 0.72 RG 3 w 52 270 m 52 301 l S
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 62 293 Tm (The demo simulates audiences in the interface; it does not enforce real privacy because there) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 62 280 Tm (is no server.) Tj ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 15 0 R >>
+endobj
+15 0 obj
+<< /Length 3697 >>
+stream
+0.43 0.27 0.69 rg BT /F2 8 Tf 1 0 0 1 52 812 Tm (CONNECFRIEND  |  VIVA GUIDE) Tj ET
+0.78 0.72 0.87 RG 0.7 w 52 802 m 543 802 l S
+0.28 0.12 0.52 rg BT /F2 20 Tf 1 0 0 1 52 780 Tm (4. Reactions, invitations, ratings, and chat) Tj ET
+0.34 0.14 0.62 rg BT /F2 13 Tf 1 0 0 1 52 748 Tm (Like/dislike toggle) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 727 Tm (Each post remembers one vote: empty, likes, or dislikes. Clicking the same reaction again) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 714 Tm (removes it. Switching reactions decrements the previous count before incrementing the new one.) Tj ET
+0.13 0.10 0.17 rg 52 619 491 82 re f
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 694 Tm (// Undo the prior reaction, then apply the new one unless toggled off.) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 684 Tm (const previous = post.vote;) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 674 Tm (if \(previous\) post[previous]--;) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 664 Tm (post.vote = previous === type ? '' : type;) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 654 Tm (if \(post.vote\) post[type]++;) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 644 Tm (save\(\);) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 634 Tm (renderFeed\(\);) Tj ET
+0.34 0.14 0.62 rg BT /F2 13 Tf 1 0 0 1 52 610 Tm (Invitations and friend ratings) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 64 589 Tm (- renderDiscover\(\) displays members who are not already friends. invite\(id\) blocks the) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 64 576 Tm (sample ignore-list case and prevents duplicate invitations.) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 64 556 Tm (- renderProfile\(\) creates a rating selector per friend. rate\(id, value\) stores the chosen) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 64 543 Tm (value by member ID and saves it.) Tj ET
+0.34 0.14 0.62 rg BT /F2 13 Tf 1 0 0 1 52 523 Tm (Private-message simulation) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 502 Tm (Each recipient ID selects a separate chat array. sendMessage\(\) validates the text, appends the) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 489 Tm (message and a local time string, saves, rerenders the selected thread, and clears the input.) Tj ET
+0.13 0.10 0.17 rg 52 404 491 72 re f
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 469 Tm (// One independent local conversation per recipient ID.) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 459 Tm (const id = $\('person'\).value;) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 449 Tm (state.chats[id] ||= [];) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 439 Tm (state.chats[id].push\({ text, time: localTime }\);) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 429 Tm (save\(\);) Tj ET
+0.96 0.93 1 rg BT /F3 7.3 Tf 1 0 0 1 60 419 Tm (renderChat\(\);) Tj ET
+0.94 0.91 0.98 rg 52 385 491 22 re f
+0.45 0.25 0.72 RG 3 w 52 385 m 52 403 l S
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 62 395 Tm (No invitation or message is delivered to another person. These are local simulations only.) Tj ET
+0.34 0.14 0.62 rg BT /F2 13 Tf 1 0 0 1 52 371 Tm (Theme and carousel) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 350 Tm (theme.js reads the saved preference before the page paints and sets Bootstrap data-bs-theme.) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 337 Tm (The toggle updates the attribute, accessibility state, and localStorage. theme.css supplies) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 324 Tm (the palette. The carousel switches the active class, updates its counter, respects) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 311 Tm (reduced-motion preference, and pauses for user choice, hidden pages, hover, or focus.) Tj ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 17 0 R >>
+endobj
+17 0 obj
+<< /Length 3678 >>
+stream
+0.43 0.27 0.69 rg BT /F2 8 Tf 1 0 0 1 52 812 Tm (CONNECFRIEND  |  VIVA GUIDE) Tj ET
+0.78 0.72 0.87 RG 0.7 w 52 802 m 543 802 l S
+0.28 0.12 0.52 rg BT /F2 20 Tf 1 0 0 1 52 780 Tm (5. Viva questions and demo checklist) Tj ET
+0.28 0.12 0.52 rg BT /F2 9.5 Tf 1 0 0 1 52 748 Tm (Q: What is the app architecture?) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 735 Tm (A: Static HTML, Bootstrap/custom CSS, and vanilla JavaScript for events and browser-local) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 722 Tm (state.) Tj ET
+0.28 0.12 0.52 rg BT /F2 9.5 Tf 1 0 0 1 52 702 Tm (Q: localStorage vs sessionStorage?) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 689 Tm (A: localStorage persists app state across reloads; sessionStorage holds the demo login flag) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 676 Tm (for the current tab session.) Tj ET
+0.28 0.12 0.52 rg BT /F2 9.5 Tf 1 0 0 1 52 656 Tm (Q: How do you keep typed HTML from running?) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 643 Tm (A: safe\(\) encodes HTML-special characters before user text is inserted into a template.) Tj ET
+0.28 0.12 0.52 rg BT /F2 9.5 Tf 1 0 0 1 52 623 Tm (Q: How does a selected-friends post work?) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 610 Tm (A: The form stores the checked member IDs in the post to field; all friends is represented by) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 597 Tm (all.) Tj ET
+0.28 0.12 0.52 rg BT /F2 9.5 Tf 1 0 0 1 52 577 Tm (Q: How does the reaction toggle work?) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 564 Tm (A: A post remembers one reaction type; the old count is undone before a new vote is applied.) Tj ET
+0.28 0.12 0.52 rg BT /F2 9.5 Tf 1 0 0 1 52 544 Tm (Q: Is the login secure? Are messages delivered?) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 531 Tm (A: No. Login is hard-coded client-side and messages stay in localStorage. This is only a) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 518 Tm (frontend demo.) Tj ET
+0.28 0.12 0.52 rg BT /F2 9.5 Tf 1 0 0 1 52 498 Tm (Q: What happens when the page reloads?) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 485 Tm (A: app.js loads saved state, applies migrations, and redraws the page.) Tj ET
+0.28 0.12 0.52 rg BT /F2 9.5 Tf 1 0 0 1 52 465 Tm (Q: How is accessibility considered?) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 452 Tm (A: Labels, alt text, ARIA labels/states, live notifications, focus styles, and reduced-motion) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 439 Tm (handling are included.) Tj ET
+0.28 0.12 0.52 rg BT /F2 9.5 Tf 1 0 0 1 52 419 Tm (Q: What would you improve for production?) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 406 Tm (A: Add a backend, secure authentication, server-side authorization, a database, and real-time) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 52 393 Tm (messaging.) Tj ET
+0.34 0.14 0.62 rg BT /F2 13 Tf 1 0 0 1 52 373 Tm (Suggested demo order) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 64 352 Tm (- Login -> Kohli feed post -> search -> publish to all/selected -> toggle likes -> invite a) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 64 339 Tm (member -> rate a friend -> send a chat message -> toggle theme -> refresh to show saved) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 64 326 Tm (state.) Tj ET
+0.94 0.91 0.98 rg 52 283 491 35 re f
+0.45 0.25 0.72 RG 3 w 52 283 m 52 314 l S
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 62 306 Tm (Be precise about what is real and simulated. The key implementation concepts are state, event) Tj ET
+0.14 0.10 0.22 rg BT /F1 9.5 Tf 1 0 0 1 62 293 Tm (handlers, rendering, validation, storage, and the limits of client-side security.) Tj ET
+endstream
+endobj
+xref
+0 18
+0000000000 65535 f 
+0000000035 00000 n 
+0000000084 00000 n 
+0000000175 00000 n 
+0000000245 00000 n 
+0000000320 00000 n 
+0000000388 00000 n 
+0000000534 00000 n 
+0000001638 00000 n 
+0000001784 00000 n 
+0000006781 00000 n 
+0000006929 00000 n 
+0000011101 00000 n 
+0000011249 00000 n 
+0000015520 00000 n 
+0000015668 00000 n 
+0000019418 00000 n 
+0000019566 00000 n 
+trailer
+<< /Size 18 /Root 1 0 R >>
+startxref
+23297
+%%EOF
